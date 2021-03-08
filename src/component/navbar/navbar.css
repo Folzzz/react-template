@@ -1,0 +1,129 @@
+.nav {
+    margin: 0;
+    padding: 2rem;
+    background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 35%, rgba(2,0,36,1) 100%);
+    height: 80px;
+    font-size: 1.2rem;
+    position: -webkit-sticky; /*safari*/
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.nav_container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_company_logo {
+    display: flex;
+    justify-self: start;
+    align-self: center;
+    cursor: pointer;
+}
+/*.nav_company_logo img {
+    object-fit: contain;
+    object-position: center;
+    max-height: 100%;
+}*/
+
+.nav_menu_icon,
+.nav_menu_links-mobile {
+    display: none;
+}
+
+.nav_menu_list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* .nav_menu_list {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 10px;
+    width: 50vw;
+    justify-content: end;
+    text-align: center;
+    margin-right: 10px
+} */
+
+.nav_menu_item {
+    height: 100%;
+}
+.nav_menu_item:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.nav_menu_links {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.nav_menu_links:hover {
+    border-bottom: 4px solid #fff;
+    transition: all 0.2s ease-out;
+}
+
+@media screen and (max-width: 960px){
+    /* .nav_container {
+        position: relative;
+    } */
+
+    .nav_menu_list {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        /* margin: 0; */
+
+        display: flex;
+        flex-direction: column;
+        /* opacity: 1; */
+        transition: all 0.5s ease;
+    }
+
+    .nav_menu_list.active {
+        background: #242424;
+        left: 0;
+        padding: 2rem;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .nav_menu_icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav_menu_item {
+        margin: 0;
+    }
+
+    .nav_menu_links {
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav_menu_links-mobile {
+        font-size: 1.5rem;
+        background-color: transparent;
+        color: #fff;
+        padding: 0.75rem 1.25rem;
+        margin: 0 auto;
+        width: 100%;
+        display: block;
+        text-align: center;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        transition: all 0.3s ease-out;
+    }
+    .nav_menu_links-mobile:hover {
+        background-color: #fff;
+        color: #242424;
+    }
+}
